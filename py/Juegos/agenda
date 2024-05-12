@@ -1,0 +1,53 @@
+def agenda():
+    
+    
+    
+    
+    
+    
+    def agregarContacto():
+        nombre = input(" Introduce el nombre del contacto ")
+        telefono = input(" Introduce el numero de telefono ")
+        if telefono.isdigit() and len(telefono) > 0 and len(telefono) <=9:
+            agenda[nombre] = telefono
+        else:
+            print (" Error, introduzca un numero de telefono valido ")
+    
+   
+    agenda = {}
+    
+    
+    while True:
+        print("1: Agregar Contacto")
+        print("2: Buscar Contacto")
+        print("3: Modificar Contacto")
+        print("4: Eliminar Contacto")
+        print("\n5: Salir del Programa\n")
+        
+        opciones = int(input("\n Introduzca una opcion "))
+        match opciones:
+            case 1:
+               agregarContacto()
+            case 2: 
+                nombre = input(" Introduzca el nombre a buscar: ") 
+                if nombre in agenda:
+                    print(f" El telefono de {nombre} es {agenda[nombre]} ")
+                else:
+                    print(f" El nombre {nombre} no existe en la agenda ")
+            case 3:
+                nombre = input(" Introduce el nombre que desea buscar ")
+                if nombre in agenda:
+                    agregarContacto()
+            case 4: 
+                nombre = input(" Introduzca el nombre a buscar: ") 
+                if nombre in agenda:
+                    del agenda[nombre]
+                else:
+                    print(" El nombre {nombre} no existe en la agenda ")
+            case 5:
+                print(" Saliendo del programa ")
+                break
+            case _:
+                print(" Opcion no valida, elige una opcion del 1 al 5 ")
+
+agenda()

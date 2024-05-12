@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Document</title>
+</head>
+<body>
+    <h1>Esto es la introducción</h1>
+    <!-- Definir una función para crear un botón -->
+    <script>
+        function createButton() {
+            var button = document.createElement("button");
+            button.textContent = "Soy un botón";
+            document.body.appendChild(button);  // Agregar el botón al cuerpo del documento
+        }
+        // Llamar a la función para crear el botón al cargar la página
+        window.onload = function() {
+            createButton();
+        };
+    </script>
+</body>
+</html>
